@@ -1,5 +1,7 @@
 # 使用：
 #
+# 【依赖项：参考 stable-diffusion-webui/webui-user.bat 中的编辑工作】
+#
 # 1. 打开 Powershell，输入 notepad $profile 以编辑本地的 Powershell 的 .ps1 配置文件；
 #    如果文件不存在，则输入 echo $profile 来查看文件应存在的路径，并去该路径新建一个同名文本文件。
 # 2. 复制以下内容到 .ps1 配置文件中。
@@ -26,5 +28,6 @@ function sdwebui {
     
     cd $webuiDir
     $argStr=$argArr -join ' '
+    if ( !$argStr.Contains('--ckpt') ) { $argStr+=" --ckpt `"${selectCkpt}`"" }
     cmd /c "webui-user.bat" $argStr
 }
