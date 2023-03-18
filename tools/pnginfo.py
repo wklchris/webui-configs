@@ -24,11 +24,3 @@ class InfoImage:
         self.img.save(fpath, format=img_format, quality=quality,
                       pnginfo=self.save_pnginfo)
         print(f'{img_format} image saved: {fpath}')
-
-
-img_path = 'tools/test.png'
-img = InfoImage(img_path)
-
-new_info = { 'wwwwwwwwwwwwwwwwwwww': "aaabbb" }
-img.update_save_info(new_info)
-img.save_img('tools/test-info.jpg')

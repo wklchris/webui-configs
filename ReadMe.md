@@ -55,7 +55,7 @@ img.save_img('test-info.jpg', quality=95)
 ```
 ## 开发参考
 
-[pnginfo.py](tools/pnginfo.py) 工具的开发参考了 [WebUI 官方仓库](https://github.com/AUTOMATIC1111/stable-diffusion-webui)中的 Prompt 嵌入与读取方法实现:
+[pnginfo.py](tools/pnginfo.py) 工具的开发参考了 [WebUI 官方仓库](https://github.com/AUTOMATIC1111/stable-diffusion-webui)中的 Prompt 嵌入与读取方法实现：
 
 - `modules/images.py` 文件的 `read_info_from_image()` 函数；
 - `modules/script_callbacks.py` 文件的 `save_image()` 函数。
