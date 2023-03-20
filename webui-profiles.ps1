@@ -18,6 +18,6 @@ function sdwebui {
     
     cd $webuiDir
     $argStr=$argArr -join ' '
-    if ( !$argStr.Contains('--ckpt') ) { $argStr+=" --ckpt `"${selectCkpt}`"" }
+    if ( !$argStr.Contains('--ckpt') ) { $argStr+=" --ckpt `"models/Stable-Diffusion/${selectCkpt}`"" }
     cmd /c "webui-user.bat" $argStr
 }
