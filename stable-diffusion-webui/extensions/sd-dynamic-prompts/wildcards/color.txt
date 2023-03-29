@@ -1,0 +1,7 @@
+{red|pink}
+{yellow|orange}
+green
+brown
+{blue|cyan}
+purple
+{black|white|gray}

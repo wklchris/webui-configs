@@ -1,0 +1,6 @@
+portrait
+upper body
+cowboy shot
+full body
+profile
+{wide shot|very wide shot}

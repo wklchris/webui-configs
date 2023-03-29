@@ -1,0 +1,10 @@
+{ocean|sea}
+lake
+river
+{island|peninsula}
+{beach|desert}
+{grassland|meadow|steppe|plain}
+pasture
+forest
+{mountains|snow mountains}
+{city|street}
