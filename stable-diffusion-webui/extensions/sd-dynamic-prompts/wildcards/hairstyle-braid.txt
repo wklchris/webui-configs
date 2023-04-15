@@ -1,0 +1,5 @@
+braid
+side braid
+single braid
+twin braids
+{braided bangs|braided bun|french braid|crown braid}

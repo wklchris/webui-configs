@@ -1,3 +1,4 @@
+{straight-on|facing viewer}
 from above
 from below
 from side

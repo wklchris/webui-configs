@@ -1,9 +1,8 @@
 {ocean|sea}
-lake
-river
+{lake|river}
 {island|peninsula}
 {beach|desert}
-{grassland|meadow|steppe|plain}
+{grassland|meadow|plain}
 pasture
 forest
 {mountains|snow mountains}
