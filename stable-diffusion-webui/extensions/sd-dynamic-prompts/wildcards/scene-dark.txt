@@ -1,0 +1,10 @@
+{starry sky|milky way}
+{sunset|dusk|twilight|sunrise|dawn}
+{moon|full moon|crescent moon}
+aurora
+fireflies
+
+# Artificial scene
+{city|neon} lights
+campfire
+fireworks

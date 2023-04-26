@@ -1,0 +1,13 @@
+{hobble dress|long dress|midi dress|maxi dress|medium dress|short dress|microdress}
+{collared dress|halter dress|off-shoulder dress|strapless dress|slip dress}
+sleeveless dress
+{shift dress|tight dress|taut dress|bodycon dress}
+{striped dress|vertical-striped dress|pinstripe dress}
+{fur-trimmed dress|lace-trimmed dress|ribbon-trimmed dress}
+{armored dress|latex dress}
+backless dress
+frilled dress
+high-low dress
+layered dress
+pleated dress
+ribbed dress

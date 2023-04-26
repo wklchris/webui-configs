@@ -1,0 +1,13 @@
+{collared shirt|off-shoulder shirt}
+compression shirt
+cropped shirt
+dress shirt
+frilled shirt
+gym shirt|jersey shirt
+polo shirt
+rash guard
+sleeveless shirt
+striped shirt
+sweatshirt
+t-shirt
+{taut shirt|tight shirt}

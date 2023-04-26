@@ -1,0 +1,16 @@
+kneeling
+lying {on back|on side|on stomach}
+reclining
+sitting, { |hugging own legs|crossed legs|seiza|wariza|yokozuwari}
+standing { |on one leg|, contrapposto|, crossed legs|, legs apart}
+jumping
+walking
+running
+squatting
+leaning {front|back|to the side}
+{bent over|frontbend}
+twisted torso
+{all fours|top-down bottom-up}
+stretching
+{upside-down|handstand|headstand}
+fighting stance

@@ -1,0 +1,6 @@
+badge
+{belt|high belt|studded belt|chest belt}
+bow
+brooch
+corsage
+tassel

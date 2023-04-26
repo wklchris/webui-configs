@@ -1,0 +1,5 @@
+kneehighs
+__cloth/pantyhose__
+__cloth/socks__
+stockings
+thighhighs

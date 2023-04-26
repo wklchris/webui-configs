@@ -1,0 +1,23 @@
+leggings
+camouflage pants
+plaid pants
+{striped pants|vertical-striped pants}
+{baggy pants|wide-leg pants|tight pants|taut pants}
+{high-waist pants|low-rise pants}
+bootcut pants
+capri pants
+cargo pants
+culottes
+flare pants
+breeches
+hakama pants
+harem pants
+jeans
+latex pants
+leather pants
+palazzo pants
+slacks
+suit pants
+sweatpants
+track pants
+yoga pants

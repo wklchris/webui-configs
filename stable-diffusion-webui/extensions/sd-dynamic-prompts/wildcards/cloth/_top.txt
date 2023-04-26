@@ -1,0 +1,6 @@
+jacket, __cloth/jacket__
+shirt, __cloth/shirt__
+sweater, __cloth/sweater__
+__cloth/vest__
+{crop top|crop top overhang|cropped jacket|cropped shirt}
+underbust

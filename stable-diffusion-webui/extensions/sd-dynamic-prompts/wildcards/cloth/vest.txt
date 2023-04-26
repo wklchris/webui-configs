@@ -1,0 +1,5 @@
+vest
+camisole
+chemise
+{tank top|sports bra}
+tube top

@@ -1,0 +1,3 @@
+pants, __cloth/pants__
+shorts, __cloth/shorts__
+skirt, __cloth/skirt__

@@ -1,0 +1,11 @@
+babydoll
+bandeau
+{bra|bow bra|frilled bra|lace-trimmed bra|strapless bra|striped bra}
+sports bra
+breast pasties
+bridal lingerie
+bustier
+cat lingerie
+negligee
+nightgown
+pajamas

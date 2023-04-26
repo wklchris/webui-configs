@@ -1,0 +1,11 @@
+abs
+armpits
+collarbone
+bare shoulders
+ribs
+{stomach|belly|midriff}
+navel
+obliques
+groin
+narrow waist
+wide hips

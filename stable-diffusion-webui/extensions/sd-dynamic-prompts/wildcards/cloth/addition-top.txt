@@ -1,0 +1,4 @@
+cape
+capelet
+cloak
+shawl

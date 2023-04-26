@@ -1,0 +1,5 @@
+bracelet
+{ring|diamond ring}
+{gloves|elbow gloves|fingerless gloves|brindal gauntlets}
+wristband
+wristwatch

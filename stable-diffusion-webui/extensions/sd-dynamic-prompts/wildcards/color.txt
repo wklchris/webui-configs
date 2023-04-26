@@ -2,6 +2,6 @@
 {yellow|orange}
 green
 brown
-{blue|cyan}
+{blue|aqua}
 purple
 {black|white|gray}

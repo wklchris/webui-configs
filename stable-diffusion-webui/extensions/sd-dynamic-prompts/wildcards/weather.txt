@@ -1,0 +1,6 @@
+sunny
+cloudy sky
+wind
+{rain|storm}
+lightning
+snow

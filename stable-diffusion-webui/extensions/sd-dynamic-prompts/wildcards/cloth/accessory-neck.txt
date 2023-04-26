@@ -1,0 +1,11 @@
+bowtie
+{choker|ribbon choker}
+collar
+lanyard
+neck ribbon
+{neckerchief|ascot}
+{chain|diamond|flower|gold|pearl} necklace
+necktie
+bolo tie
+{amethyst|emerald|ruby|sapphire|topaz|diamond|pearl} pendant
+{scarf|fur scarf}

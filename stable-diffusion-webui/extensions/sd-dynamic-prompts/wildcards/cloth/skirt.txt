@@ -1,0 +1,16 @@
+{long skirt|maxi skirt|midi skirt|medium skirt|miniskirt|microskirt}
+beltskirt
+denim skirt
+frilled skirt
+hakama skirt
+high-low skirt
+latex skirt
+layered skirt
+overskirt
+petticoat
+plaid skirt
+pleated skirt
+pencil skirt
+sarong
+side-tie skirt
+suit skirt

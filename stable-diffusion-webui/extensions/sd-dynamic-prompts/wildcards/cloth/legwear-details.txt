@@ -1,0 +1,8 @@
+fishnet legwear
+frilled legwear, frills
+lace-trimmed legwear
+lace legwear
+latex legwear
+ribbed legwear
+{seamed|front-seamed|side-seamed} legwear
+striped legwear

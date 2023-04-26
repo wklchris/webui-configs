@@ -1,0 +1,2 @@
+__cloth/_full__
+__cloth/_top__, __cloth/_bottom__

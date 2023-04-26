@@ -1,0 +1,12 @@
+{bodysuit, __cloth/bodysuit__|leotard, __cloth/leotard__|bodystocking}
+dress, __cloth/dress__
+china dress
+coat, __cloth/coat__
+hakama
+hanfu
+{kimono|yukata}
+robe
+{school uniform|summer uniform|serafuku}
+{sportswear|gym uniform}
+{swimsuit, __cloth/swimsuit__|bikini, __cloth/bikini__}
+{suit|business suit}
