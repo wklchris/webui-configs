@@ -12,16 +12,21 @@
 ## 以 Powershell 参数启动：webui-profiles.ps1
 
 [webui-profiles.ps1](./webui-profiles.ps1) 能从 Powershell 命令行使用 `sdwebui` 快速启动。可以在本机使用，也便于通过 SSH 启动远程机的 SD-WebUI。
-  * 在启动时会检测所有本地模型（并标数字序号），用户应输入数字来选择一个模型加载。
   * 支持额外的、正常使用空格分隔的 SD-WebUI 参数，比如： `sdwebui --medvram --listen`。
+  * 在启动时会检测所有本地模型（并标数字序号），用户应输入数字来选择一个模型加载。
+    * 如果只查找到一个模型文件，那么将自动加载它；用户无需再输入数字序号。
+    * 特别地，用户可以指定一个字符串，让脚本只查找以该字符串开头的模型文件：
+      ```
+      sdwebui sd-v1
+      ```
 
 安装：
 
 1. 参考本仓库中的 [webui-user.bat](stable-diffusion-webui/webui-user.bat) 对本地的 `webui-user.bat` 进行配置。
 2. 打开 Powershell，输入 `notepad $profile` 以编辑本地的 Powershell 的默认 .ps1 配置文件；如果该文件不存在，则输入 `echo $profile` 来查看文件应存在的路径，并去该路径新建一个同名文本文件。
-4. 将本脚本（[webui-profiles.ps1](./webui-profiles.ps1) 文件）中 `webuiDir` 变量的值（下例中为 `D:\Git-repos\stable-diffusion-webui`）改为本地的实际 SD-WebUI 安装路径。
-5. 复制本脚本中的内容到本地的 Powershell 默认配置文件中。
-6. 保存并关闭配置文件。
+3. 将本脚本（[webui-profiles.ps1](./webui-profiles.ps1) 文件）中 `webuiDir` 变量的值（下例中为 `D:\Git-repos\stable-diffusion-webui`）改为本地的实际 SD-WebUI 安装路径。
+4. 复制本脚本中的内容到本地的 Powershell 默认配置文件中。
+5. 保存并关闭配置文件。重新打开 Powershell 以使用。
 
 使用：
 
@@ -34,6 +39,12 @@ sdwebui
 sdwebui --share
 ```
 
+传递参数，并在打印模型列表时，只查看以给定字符串 `sd-v1-5` 开头的模型文件：
+```
+sdwebui sd-v1-5 --share
+```
+
+最后，用户可以通过 `get-help sdwebui --examples` 来查看该函数的使用帮助。
 
 ## PNG 内嵌文本管理：tools/pnginfo.py
 
