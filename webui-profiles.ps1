@@ -49,3 +49,22 @@ PS > sdwebui any --share --gradio-auth user:pswd
 	}
     cmd /c "webui-user.bat" $argStr
 }
+
+function sdwebui-bayes-merge {
+<#
+.SYNOPSIS
+运行 bayes-merge (用于 sd-webui-bayesian-merger 插件).
+在执行本命令前，用户需要在另一窗口先以：
+
+PS> sdwebui --api
+
+启动 WebUI.
+#>
+	cd "${webuiDir}/extensions/sd-webui-bayesian-merger"
+
+	$venv="${webuiDir}/venv"
+	if (Test-Path -Path $venv) {
+		 Invoke-expression "${venv}/Scripts/activate.ps1"
+	}
+	python bayesian_merger.py
+}
