@@ -1,7 +1,7 @@
 {red|pink}
-{yellow|orange}
+{yellow|orange|gold}
 green
 brown
 {blue|aqua}
 purple
-{black|white|gray}
+{black|white|grey|silver}

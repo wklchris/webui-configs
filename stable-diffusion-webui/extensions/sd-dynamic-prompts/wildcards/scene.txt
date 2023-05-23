@@ -1,20 +1,22 @@
 {ocean|sea}
 {lake|river|pond}
+waterfall
 island
 {beach|desert}
 {grassland|meadow|plain}
-{flower|petals}
-pasture
+{flower|petals|garden}
 forest
 {bamboo|vines}
-{mountains|hill|snow mountains}
+{mountains|hill|mountainous horizon|snow mountains}
 {mountain peak|hilltop}
 cave
 
 # Artificial scene
 {road|bridge|alley}
 {city|cityscape|street}
-tower
-skyscrapper
 city skyline
+{building|skyscrapper|house}
+park
+stairs
 rooftop
+tower

@@ -1,0 +1,8 @@
+fishnet
+frilled
+lace-trimmed
+lace
+latex
+ribbed
+{seamed|front-seamed|side-seamed}
+striped

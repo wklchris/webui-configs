@@ -3,7 +3,8 @@
 本仓库用于存放对[stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui)工具进行快速设置的一些工具。适用于 Windows。
 
 - [以 Powershell 参数启动：webui-profiles.ps1](#以-powershell-参数启动webui-profilesps1)
-- [PNG 内嵌文本管理：tools/pnginfo.py](#png-内嵌文本管理toolspnginfopy)
+- [PNG 内嵌文本管理：pnginfo.py](#png-内嵌文本管理pnginfopy)
+- [快速配置贝叶斯融合参数：config-bayes-merger.py](#快速配置贝叶斯融合参数config-bayes-mergerpy)
 - [开发参考](#开发参考)
 - [许可证](#许可证)
 
@@ -46,7 +47,7 @@ sdwebui sd-v1-5 --share
 
 最后，用户可以通过 `get-help sdwebui --examples` 来查看该函数的使用帮助。
 
-## PNG 内嵌文本管理：tools/pnginfo.py
+## PNG 内嵌文本管理：pnginfo.py
 
 [pnginfo.py](tools/pnginfo.py) 可以读取/写入文本到 PNG 文件块（chunk），或者将图片转为其他格式（例如 JPG）来去除 SD-WebUI 生成的 PNG 中嵌入的 prompt 文本。
 
@@ -64,6 +65,18 @@ img.save_img('test-info.png')
 # 通过转 JPG 的方式去除文本
 img.save_img('test-info.jpg', quality=95)  
 ```
+
+## 快速配置贝叶斯融合参数：config-bayes-merger.py
+
+[config-bayes-merger.py](tools/config-bayes-merger.py) 能够配置插件 [s1dlx/sd-webui-bayesian-merger](https://github.com/s1dlx/sd-webui-bayesian-merger) 的初始化参数。
+
+在使用前，先配置该脚本内的本地化变量（`sdwebui_dir` 与 `model_a/b`）。然后执行：
+
+```python
+python tools/config-bayes-merger.py
+```
+
+
 ## 开发参考
 
 [pnginfo.py](tools/pnginfo.py) 工具的开发参考了 [WebUI 官方仓库](https://github.com/AUTOMATIC1111/stable-diffusion-webui)中的 Prompt 嵌入与读取方法实现：

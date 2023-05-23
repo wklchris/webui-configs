@@ -1,8 +1,9 @@
 {starry sky|milky way}
-{sunset|dusk|twilight|sunrise|dawn}
+{sunset|dusk|twilight}
+{sunrise|dawn}
 {moon|full moon|crescent moon}
 aurora
-fireflies
+{rainy clouds|storm clouds}
 
 # Artificial scene
 {city|neon} lights
