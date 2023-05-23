@@ -4,7 +4,7 @@
 from pathlib import Path
 import yaml
 
-# Inputs
+# Inputs: User configured file paths
 sdwebui_dir = "/path/to/stable-diffusion-webui"
 model_a = "MODEL-A.safetensors"
 model_b = "MODEL-B.safetensors"
@@ -13,6 +13,11 @@ model_b = "MODEL-B.safetensors"
 extension_dir = f"{sdwebui_dir}/extensions/sd-webui-bayesian-merger"
 conf_dir = f"{extension_dir}/conf"
 payload_default = "payloadname"
+
+if Path(extension_dir).is_dir():
+    print(f"Extension dir: {extension_dir}")
+else:
+    raise Exception(f"Extension dir not exists: {extension_dir}")
 
 def modify_yaml(src, dest, dicts):
     with open(src, 'r') as f:
@@ -87,12 +92,15 @@ bayes = {
     }
 }
 
+for k, v in bayes["config"]["dicts"].items():
+    if k.startswith("model_") and not Path(v).is_file():
+        print(f"** WARNING File not exists: '{k}' in config.yaml: {v}")
+
 for pname, pdict in payloads.items():
     bayes[f"payloads_{pname}"] = make_payload_dict(pname, pdict)
 
 
 # Main
 
-for k in bayes.keys():
-    v = bayes[k]
+for v in bayes.values():
     modify_yaml(**v)
