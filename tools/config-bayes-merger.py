@@ -8,16 +8,19 @@ import yaml
 sdwebui_dir = "/path/to/stable-diffusion-webui"
 model_a = "MODEL-A.safetensors"
 model_b = "MODEL-B.safetensors"
+save_imgs = True
 
-# Global vars
+## Global vars
 extension_dir = f"{sdwebui_dir}/extensions/sd-webui-bayesian-merger"
 conf_dir = f"{extension_dir}/conf"
 payload_default = "payloadname"
 
+## Print info
 if Path(extension_dir).is_dir():
     print(f"Extension dir: {extension_dir}")
 else:
     raise Exception(f"Extension dir not exists: {extension_dir}")
+print(f"* model_a: {model_a}\n* model_b: {model_b}\n* Save Img: {save_imgs}")
 
 def modify_yaml(src, dest, dicts):
     with open(src, 'r') as f:
@@ -31,9 +34,11 @@ def modify_yaml(src, dest, dicts):
 
     with open(dest, 'w', encoding='utf-8') as f:
         yaml.dump(configs, f, sort_keys=False)
+    print(f"File written: {Path(dest).name}")
 
 def make_payload_dict(pname, dicts):
     default_payload = {
+        "score_weight": 1.0,
         "prompt": "masterpiece, best quality, 1girl",
         "negative_prompt": "(worst quality, low quality:1.4), lowres, bad anatomy, (child, loli), (nsfw:1.2), (blurry), (text, logo, watermark, signature, username)",
         "steps": 20,
@@ -51,7 +56,7 @@ def make_payload_dict(pname, dicts):
     return pdict
 
 payloads = {
-    "basic_girl": dict(),
+    "basic_girl": {"score_weight": 0.8},
     "basic_girl_768": {"height": 768}
 }
 
@@ -70,7 +75,9 @@ bayes = {
             "init_points": 5,
             "n_iters": 15,
             "scorer_method": "chad",
-            "save_best": True
+            "save_best": True,
+            "guided_optimisation": True,
+            "save_imgs": save_imgs
         }
     },
     "cargo": {
@@ -88,13 +95,13 @@ bayes = {
     "guide": {
         "src": f"{conf_dir}/optimisation_guide/guide.tmpl.yaml",
         "dest": f"{conf_dir}/optimisation_guide/guide.yaml",
-        "dicts": dict()
+        "dicts": {
+            "frozen_params": {"base_alpha": 0.0},  # An example
+            "custom_ranges": {},
+            "groups": {}
+        }
     }
 }
-
-for k, v in bayes["config"]["dicts"].items():
-    if k.startswith("model_") and not Path(v).is_file():
-        print(f"** WARNING File not exists: '{k}' in config.yaml: {v}")
 
 for pname, pdict in payloads.items():
     bayes[f"payloads_{pname}"] = make_payload_dict(pname, pdict)
@@ -104,3 +111,6 @@ for pname, pdict in payloads.items():
 
 for v in bayes.values():
     modify_yaml(**v)
+if bayes["config"]["dicts"]["guided_optimisation"]:
+    print("--- Guided optimisation enabled. ---")
+    print(bayes["guide"]["dicts"])
