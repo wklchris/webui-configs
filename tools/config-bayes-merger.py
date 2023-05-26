@@ -10,6 +10,11 @@ model_a = "MODEL-A.safetensors"
 model_b = "MODEL-B.safetensors"
 save_imgs = True
 
+payloads = {
+    "basic_girl": {"score_weight": 0.8},
+    "basic_girl_768": {"height": 768}
+}
+
 ## Global vars
 extension_dir = f"{sdwebui_dir}/extensions/sd-webui-bayesian-merger"
 conf_dir = f"{extension_dir}/conf"
@@ -55,10 +60,15 @@ def make_payload_dict(pname, dicts):
     }
     return pdict
 
-payloads = {
-    "basic_girl": {"score_weight": 0.8},
-    "basic_girl_768": {"height": 768}
-}
+def remove_unused_payload():
+    cargo_dir = Path(f"{conf_dir}/payloads/cargo")
+    for f in cargo_dir.iterdir():
+        fname = f.name
+        if fname.endswith('tmpl.yaml') or not fname.endswith('.yaml'):
+            continue
+        if f.stem not in payloads:
+            f.unlink()
+            print(f"~ Removed payload: {fname}")
 
 bayes = {
     "config": {
@@ -111,6 +121,8 @@ for pname, pdict in payloads.items():
 
 for v in bayes.values():
     modify_yaml(**v)
+# remove_unused_payload()
+
 if bayes["config"]["dicts"]["guided_optimisation"]:
     print("--- Guided optimisation enabled. ---")
     print(bayes["guide"]["dicts"])
