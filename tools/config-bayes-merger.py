@@ -9,7 +9,14 @@ sdwebui_dir = "/path/to/stable-diffusion-webui"
 model_a = "MODEL-A.safetensors"
 model_b = "MODEL-B.safetensors"
 save_imgs = True
+clip_skip = 2
+n_iter = 10
 
+guide = {
+    "frozen_params": {
+        "base_alpha": 0.0
+    }
+}
 payloads = {
     "basic_girl": {"score_weight": 0.8},
     "basic_girl_768": {"height": 768}
@@ -45,7 +52,7 @@ def make_payload_dict(pname, dicts):
     default_payload = {
         "score_weight": 1.0,
         "prompt": "masterpiece, best quality, 1girl",
-        "negative_prompt": "(worst quality, low quality:1.4), lowres, bad anatomy, (child, loli), (nsfw:1.2), (blurry), (text, logo, watermark, signature, username)",
+        "negative_prompt": "(worst quality, low quality:1.4), bad anatomy, lowres, ((blurry, depth of field, bokeh)), (text, logo, watermark, signature, username)",
         "steps": 20,
         "cfg": 7,
         "width": 512,
@@ -83,11 +90,12 @@ bayes = {
             "latin_hypercube_sampling": True,
             "batch_size": 2,  # Won't affect VRAM use
             "init_points": 5,
-            "n_iters": 15,
+            "n_iters": n_iter,
             "scorer_method": "chad",
             "save_best": True,
             "guided_optimisation": True,
-            "save_imgs": save_imgs
+            "save_imgs": save_imgs,
+            "skip_position_ids": clip_skip - 1
         }
     },
     "cargo": {
@@ -112,6 +120,7 @@ bayes = {
         }
     }
 }
+bayes["guide"]["dicts"].update(guide)
 
 for pname, pdict in payloads.items():
     bayes[f"payloads_{pname}"] = make_payload_dict(pname, pdict)
